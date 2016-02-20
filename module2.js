@@ -1,6 +1,10 @@
+var oboe = require('oboe');
 var module1 = require('./module1.js');
 
-module1.getDataStream()
-  .on('data', function(data){
+oboe(module1.getDataStream())
+  // .node('!', function(data){
+  //   console.log(data);
+  // });
+  .done(function(data){
     console.log(data);
   });
